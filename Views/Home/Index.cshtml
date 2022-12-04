@@ -1,0 +1,69 @@
+﻿@model CustomValidation.Models.Adress
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    {
+        <h1>Add New Customer</h1>
+        <table border="1" cellpadding="10">
+            <tr>
+                <td>@Html.DisplayFor(m => m.AddressLine1) </td>
+                <td>
+                    @Html.TextBoxFor(m => m.AddressLine1)
+                    @Html.ValidationMessageFor(m => m.AddressLine1)
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayFor(m => m.AddressLine2) </td>
+                <td>
+                    @Html.TextBoxFor(m => m.AddressLine2)
+                    @Html.ValidationMessageFor(m => m.AddressLine2)
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayFor(m => m.City) </td>
+                <td>
+                    @Html.TextBoxFor(m => m.City)
+                    @Html.ValidationMessageFor(m => m.City)
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayFor(m => m.PostalCode) </td>
+                <td>
+                    @Html.TextBoxFor(m => m.PostalCode)
+                    @Html.ValidationMessageFor(m => m.PostalCode)
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayFor(m => m.State) </td>
+                <td>
+                    @Html.TextBoxFor(m => m.State)
+                    @Html.ValidationMessageFor(m => m.State)
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayFor(m => m.Country) </td>
+                <td>
+                    @Html.TextBoxFor(m => m.Country)
+                    @Html.ValidationMessageFor(m => m.Country)
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Submit" />
+                </td>
+            </tr>
+        </table>
+    }
+
+    @Html.ValidationSummary()
+</div>
